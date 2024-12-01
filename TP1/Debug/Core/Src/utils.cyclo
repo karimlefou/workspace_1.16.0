@@ -1,0 +1,6 @@
+../Core/Src/utils.c:21:6:fillBuffer	4
+../Core/Src/utils.c:45:6:Recherche_virgule	4
+../Core/Src/utils.c:57:8:getLatitude	2
+../Core/Src/utils.c:81:2:getLongitude	2
+../Core/Src/utils.c:106:7:setup	3
+../Core/Src/utils.c:129:7:loop	2

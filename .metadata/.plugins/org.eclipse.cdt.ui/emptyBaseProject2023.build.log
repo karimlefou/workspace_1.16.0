@@ -1,0 +1,10 @@
+22:06:21 **** Incremental Build of configuration Debug for project emptyBaseProject2023 ****
+make -j4 all 
+arm-none-eabi-size  emptyBaseProject2023.elf 
+   text	   data	    bss	    dec	    hex	filename
+  36084	    476	   2044	  38604	   96cc	emptyBaseProject2023.elf
+Finished building: default.size.stdout
+ 
+
+22:06:21 Build Finished. 0 errors, 0 warnings. (took 306ms)
+

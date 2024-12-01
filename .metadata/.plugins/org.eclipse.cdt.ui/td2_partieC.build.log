@@ -1,0 +1,9 @@
+14:27:30 **** Incremental Build of configuration Debug for project td2_partieC ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.2.0.202405231314/jre/bin/server;C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_3.2.0.202405231314/jre/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\karim\AppData\Local\Microsoft\WindowsApps;;C:\ST\STM32CubeIDE_1.16.0\STM32CubeIDE]
+
+14:27:30 Build Failed. 1 errors, 0 warnings. (took 75ms)
+

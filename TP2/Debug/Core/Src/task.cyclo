@@ -1,0 +1,5 @@
+../Core/Src/task.c:20:6:setup	1
+../Core/Src/task.c:23:6:loop	1
+../Core/Src/task.c:27:6:taskLED	1
+../Core/Src/task.c:42:6:taskButton	1
+../Core/Src/task.c:47:6:taskScreen	1

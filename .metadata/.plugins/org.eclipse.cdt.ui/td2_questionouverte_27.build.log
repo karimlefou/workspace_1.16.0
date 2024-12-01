@@ -1,0 +1,21 @@
+20:27:51 **** Incremental Build of configuration Debug for project td2_questionouverte_27 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/utils.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/utils.d" -MT"Core/Src/utils.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/utils.o"
+../Core/Src/utils.c: In function 'loop':
+../Core/Src/utils.c:126:14: warning: unused variable 'array' [-Wunused-variable]
+  126 |          int array[ARRAY_SIZE];
+      |              ^~~~~
+arm-none-eabi-gcc -o "td2_questionouverte_27.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\karim\STM32CubeIDE\workspace_1.16.0\td2_questionouverte_27\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="td2_questionouverte_27.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: td2_questionouverte_27.elf
+ 
+arm-none-eabi-size  td2_questionouverte_27.elf 
+arm-none-eabi-objdump -h -S td2_questionouverte_27.elf  > "td2_questionouverte_27.list"
+   text	   data	    bss	    dec	    hex	filename
+  31692	    104	   2768	  34564	   8704	td2_questionouverte_27.elf
+Finished building: default.size.stdout
+ 
+Finished building: td2_questionouverte_27.list
+ 
+
+20:27:52 Build Finished. 0 errors, 1 warnings. (took 1s.429ms)
+

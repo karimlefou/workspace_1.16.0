@@ -1,0 +1,17 @@
+11:51:09 **** Incremental Build of configuration Debug for project TD5 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/quiz.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/quiz.d" -MT"Core/Src/quiz.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/quiz.o"
+arm-none-eabi-gcc -o "TD5.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\karim\STM32CubeIDE\workspace_1.16.0\TD5\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TD5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TD5.elf
+ 
+arm-none-eabi-size  TD5.elf 
+arm-none-eabi-objdump -h -S TD5.elf  > "TD5.list"
+   text	   data	    bss	    dec	    hex	filename
+  42464	    468	   2844	  45776	   b2d0	TD5.elf
+Finished building: default.size.stdout
+ 
+Finished building: TD5.list
+ 
+
+11:51:11 Build Finished. 0 errors, 0 warnings. (took 1s.303ms)
+

@@ -1,0 +1,6 @@
+../Core/Src/utils.c:14:6:setup	1
+../Core/Src/utils.c:17:6:fillArray	6
+../Core/Src/utils.c:43:6:fillArray1	7
+../Core/Src/utils.c:79:5:getMeanValue	3
+../Core/Src/utils.c:90:6:calculate_press_intervals	5
+../Core/Src/utils.c:125:6:loop	1

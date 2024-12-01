@@ -1,0 +1,9 @@
+2024-10-07 00:00:00,013 [INFO] ApiDbMcu:508 - Load IP Config File for TOUCHSENSING
+2024-10-07 00:00:00,149 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2024-10-07 00:00:00,154 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2024-10-07 00:00:02,809 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 2930mS.
+2024-10-07 00:00:02,809 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-07 00:00:02,812 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2024-10-07 00:00:03,440 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2024-10-07 00:00:03,745 [INFO] ApiDb:448 - Save user favorites file C:\Users\karim/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2024-10-07 00:00:03,745 [INFO] ApiDb:452 - User favorites MCUs=[]

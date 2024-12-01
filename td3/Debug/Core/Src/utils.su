@@ -1,0 +1,4 @@
+../Core/Src/utils.c:13:6:setup	104	static
+../Core/Src/utils.c:27:6:caracArray	32	static
+../Core/Src/utils.c:49:6:dispCaracArray	32	static
+../Core/Src/utils.c:54:6:loop	4	static

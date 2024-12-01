@@ -1,0 +1,6 @@
+../Core/Src/quiz.c:16:6:init_system	32	static
+../Core/Src/quiz.c:27:6:displaysystem	24	static
+../Core/Src/quiz.c:36:6:readsensors	32	static
+../Core/Src/quiz.c:46:6:checkthreshold	24	static
+../Core/Src/quiz.c:65:6:setup1	8	static
+../Core/Src/quiz.c:75:6:loop1	4	static

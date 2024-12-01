@@ -1,0 +1,5 @@
+../Core/Src/utils.c:14:6:setup	152	static
+../Core/Src/utils.c:32:6:loop	4	static
+../Core/Src/utils.c:37:6:getMinPosition	32	static
+../Core/Src/utils.c:63:5:sortArray	104	static
+../Core/Src/utils.c:76:6:displayArray	24	static

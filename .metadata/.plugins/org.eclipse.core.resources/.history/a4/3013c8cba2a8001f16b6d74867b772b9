@@ -1,0 +1,71 @@
+/*
+ * stepperMotor.c
+ *
+ *  Created on: Nov 8, 2024
+ *      Author: karim
+ */
+
+#include "stepperMotor.h"
+#define ARR_SIZE 8
+double  arr[8][2]={{0.0167,37436},{0.033,18749},{0.083,6499},{0.167,3749},{0.5,1249},{1,624},{1.5,415},{2,311}};
+
+
+
+ void init_stepper(
+        TIM_HandleTypeDef *htim_pwm_p,
+        uint32_t pwm_channel_number_p,
+        GPIO_TypeDef *gpio_direction_p,
+        uint16_t gpio_direction_pin_p,
+        GPIO_TypeDef *gpio_ms1_p,
+        uint16_t gpio_ms1_pin_p,
+        GPIO_TypeDef *gpio_ms2_p,
+        uint16_t gpio_ms2_pin_p,
+        GPIO_TypeDef *gpio_enable_p,
+        uint16_t gpio_enable_pin_p
+    ) {
+        // Initialiser les paramètres du moteur
+	    STEPPERMOTOR.htim_pwm = htim_pwm_p;
+        stepper_motor.pwm_channel_number = pwm_channel_number_p;
+        stepper_motor.gpio_direction = gpio_direction_p;
+        stepper_motor.gpio_direction_pin = gpio_direction_pin_p;
+        stepper_motor.gpio_ms1 = gpio_ms1_p;
+        stepper_motor.gpio_ms1_pin = gpio_ms1_pin_p;
+        stepper_motor.gpio_ms2 = gpio_ms2_p;
+        stepper_motor.gpio_ms2_pin = gpio_ms2_pin_p;
+        stepper_motor.gpio_enable = gpio_enable_p;
+        stepper_motor.gpio_enable_pin = gpio_enable_pin_p;
+
+        // Configurer les pins pour le contrôle du moteur
+        HAL_GPIO_WritePin(stepper_motor.gpio_enable, stepper_motor.gpio_enable_pin, GPIO_PIN_SET); // Activer le moteur
+        HAL_GPIO_WritePin(stepper_motor.gpio_direction, stepper_motor.gpio_direction_pin, GPIO_PIN_RESET); // Direction par défaut
+        HAL_TIM_PWM_Start(stepper_motor.htim_pwm, stepper_motor.pwm_channel_number); // Démarrer la PWM
+    }
+
+    // Fonction pour lancer le moteur avec une vitesse et une direction spécifiques
+ void launch_stepper(int speed, int direction)
+ {
+        // Limiter la vitesse entre des valeurs minimum et maximum
+        if (speed < MIN_SPEED) speed = MIN_SPEED;
+        if (speed > MAX_SPEED) speed = MAX_SPEED;
+
+        // Configurer la direction du moteur
+        HAL_GPIO_WritePin(stepper_motor.gpio_direction, stepper_motor.gpio_direction_pin, direction ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
+        // Ajuster la période de PWM pour contrôler la vitesse
+        __HAL_TIM_SET_AUTORELOAD(stepper_motor.htim_pwm, arr[speed]);
+        HAL_TIM_PWM_Start(stepper_motor.htim_pwm, stepper_motor.pwm_channel_number);
+    }
+//comment chercher pour la valeur du tableau arr
+    // Fonction pour lire la vitesse actuelle du moteur
+ //partie 8.4
+    int get_speed() {
+        int period = __HAL_TIM_GET_AUTORELOAD(stepper_motor.htim_pwm);
+        int speed = BASE_PERIOD / period; // Exprimez la vitesse dans l'unité souhaitée
+        return speed;
+    }
+
+
+
+
+
+

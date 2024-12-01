@@ -1,0 +1,4 @@
+../Core/Src/utils.c:13:6:setup	2
+../Core/Src/utils.c:27:6:caracArray	4
+../Core/Src/utils.c:49:6:dispCaracArray	1
+../Core/Src/utils.c:54:6:loop	1

@@ -1,0 +1,42 @@
+17:24:52 **** Incremental Build of configuration Debug for project TD2_7 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/utils.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/utils.d" -MT"Core/Src/utils.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/utils.o"
+../Core/Src/utils.c: In function 'fillArray':
+../Core/Src/utils.c:20:5: error: redeclaration of 'i' with no linkage
+   20 | int i=0;
+      |     ^
+../Core/Src/utils.c:15:14: note: previous declaration of 'i' with type 'int'
+   15 |          int i;
+      |              ^
+../Core/Src/utils.c:23:5: error: 'array' redeclared as different kind of symbol
+   23 | int array[ARRAY_SIZE]={0};
+      |     ^~~~~
+../Core/Src/utils.c:14:22: note: previous definition of 'array' with type 'int *'
+   14 | void fillArray(int * array, int size){
+      |                ~~~~~~^~~~~
+../Core/Src/utils.c: In function 'loop':
+../Core/Src/utils.c:33:17: error: too few arguments to function 'fillArray'
+   33 |                 fillArray(array);
+      |                 ^~~~~~~~~
+../Core/Src/utils.c:14:6: note: declared here
+   14 | void fillArray(int * array, int size){
+      |      ^~~~~~~~~
+../Core/Src/utils.c: In function 'fillArray':
+../Core/Src/utils.c:45:1: error: expected declaration or statement at end of input
+   45 | }
+      | ^
+../Core/Src/utils.c:24:5: warning: unused variable 'index' [-Wunused-variable]
+   24 | int index;
+      |     ^~~~~
+../Core/Src/utils.c:23:5: warning: unused variable 'array' [-Wunused-variable]
+   23 | int array[ARRAY_SIZE]={0};
+      |     ^~~~~
+../Core/Src/utils.c: At top level:
+../Core/Src/utils.c:25:6: warning: 'loop' defined but not used [-Wunused-function]
+   25 | void loop(){
+      |      ^~~~
+make: *** [Core/Src/subdir.mk:58: Core/Src/utils.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+17:24:53 Build Failed. 5 errors, 3 warnings. (took 398ms)
+

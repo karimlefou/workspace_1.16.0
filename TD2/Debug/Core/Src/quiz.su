@@ -1,0 +1,4 @@
+../Core/Src/quiz.c:16:6:init_system	24	static
+../Core/Src/quiz.c:27:6:displaysystem	24	static
+../Core/Src/quiz.c:37:6:setup1	8	static
+../Core/Src/quiz.c:45:6:loop1	4	static

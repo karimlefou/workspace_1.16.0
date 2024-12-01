@@ -1,0 +1,6 @@
+../Core/Src/morse.c:26:6:setup1	1
+../Core/Src/morse.c:36:6:loop1	4
+../Core/Src/morse.c:64:6:lookupInBaseFromCode	3
+../Core/Src/morse.c:74:8:lookupInBaseFromLetter	3
+../Core/Src/morse.c:84:6:waitForInput	7
+../Core/Src/morse.c:124:6:decodeappui	4

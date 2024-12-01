@@ -1,0 +1,4 @@
+../Core/Src/quiz.c:14:6:setup2	8	static
+../Core/Src/quiz.c:20:7:tri_insertion	32	static
+../Core/Src/quiz.c:38:6:displayArray	24	static
+../Core/Src/quiz.c:46:6:loop2	4	static

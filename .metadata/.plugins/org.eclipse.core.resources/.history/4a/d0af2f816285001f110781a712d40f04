@@ -1,0 +1,122 @@
+/*
+ * morse.c
+ *
+ *  Created on: Oct 7, 2024
+ *      Author: karim
+ */
+
+#include <stm32l4xx_hal.h>
+#include "morse.h"
+const MORSE_LETTRE alphabet[ALPHABET_SIZE]={{'A', ".-"},{'B', "-..."},{'C', "-.-."},{'D', "-.."},{'E', "."},{'F', "..-."},{'G', "--."},{'H', "...."}, {'I', ".."},
+		{'J', ".---"},     {'K', "-.-"},        {'L', ".-.."},
+		{'M', "--"},       {'N', "-."},         {'O', "---"},
+		{'P', ".--."},     {'Q', "--.-"},       {'R', ".-."},
+		{'S', "..."},      {'T', "-"},          {'U', "..-"},
+		{'V', "...-"},    { 'W', ".--"},        {'X', "-..-"},
+		{'Y', "-.--"},     {'Z', "--.."},
+		{'.', ".-.-.-"},
+		{'0', "-----"},    {'1', ".----"},      {'2', "..---"},
+		{'3', "...--"},    {'4', "....-"},      {'5', "....."},
+		{'6', "-...."},   { '7', "--..."},      {'8', "---.."},
+		{'9', "----."},
+      } ; // CONST CA VEUT DIRE CONSTANTE / CA NE CHANGE PAS DE VALEUR NUMERIQUE
+void setup1()
+{
+
+	printf("%c /n/r",lookupInBaseFromCode(".."));
+	printf("%s ",lookupInBaseFromLetter('W'));
+	printf("%c",waitForInput(" "));
+
+
+}
+
+void loop1()
+{
+
+}
+char lookupInBaseFromCode (char * code)
+{
+	int i;
+	for (i=0;i<ALPHABET_SIZE;i++)
+	{
+		if (strcmp(code,alphabet[i].code)==0)
+			return alphabet[i].letter;
+	}
+	return 0;
+}
+char * lookupInBaseFromLetter (char letter)
+{
+	int i;
+	for (i=0;i<ALPHABET_SIZE;i++)
+	{
+		if (letter==alphabet[i].letter)
+			return alphabet[i].code;
+	}
+	return 0;
+}
+char waitForInput (char previousInput)
+{
+	int  d = 0, f = 0,T,prec,T1,d1,f1;
+	GPIO_PinState  cour;
+	cour = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+	if (previousInput==' ')
+	{
+		prec=1;
+	}
+	else
+	{
+		prec=0;
+	}
+	if (cour==0)
+	{
+		d=HAL_GetTick();
+		prec=cour;
+		cour = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+		if(cour==1)
+		{
+			f=HAL_GetTick();
+			T=f-d;
+			prec=cour;
+			d1=0;
+			if(T >= 200)
+			{
+				return '-';
+			}
+			else
+			{
+				return '.';
+			}
+		}
+
+
+	}
+	else
+	{
+		f1=HAL_GetTick();
+		prec=cour;
+		cour = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+		if (cour==0)
+		{
+			T1=f1-d1;
+			prec=cour;
+			if(T1 >=1000)
+			{
+				if(prec ==1)
+				{
+					return T;
+				}
+				else
+				{
+					return ' ';
+				}
+			}
+		}
+
+
+
+	}
+
+
+
+}
+
